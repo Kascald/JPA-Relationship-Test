@@ -1,12 +1,13 @@
 package com.packet.cardatabase.repository;
 
 import com.packet.cardatabase.domain.Car;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
+
+@RepositoryRestResource(path = "vehicles")
 public interface CarRepository extends CrudRepository<Car,Long> {
 	List<Car> findByBrand(String brand);
 	List<Car> findByColor(String color);
